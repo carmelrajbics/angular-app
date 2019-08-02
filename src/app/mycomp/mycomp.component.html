@@ -1,0 +1,35 @@
+<app-header></app-header>
+<p>
+  mycomp works!
+</p>
+<br />
+<p>
+  <app-footer></app-footer>
+</p>
+<br />
+<div *ngIf="shoppingCart.length >0 then show else noshow"></div>
+<br />
+
+<ng-template #show> Items in Shoping cart</ng-template>
+<ng-template #noshow> Items in Shoping cart</ng-template>
+
+Company : <input type="text" [value]="companyName" (input)="companyName=$event.target.value" /> {{companyName}}
+
+Company 2 : <input type="text" [(ngModel)]="companyName" /> {{companyName}}
+
+<br />
+Profile : <img [src]="profilePic" />
+<br />
+<button (click)="callme()" class="btn btn-primary">call it</button>
+<br />
+
+<app-stardemo [isFavorite]="myFav"></app-stardemo>
+
+<p>
+  <app-likedemo [totalLikes]="totalLike"></app-likedemo>
+</p>
+
+<app-pipedemo></app-pipedemo>
+<br/>
+<br/>
+<app-formbuilder></app-formbuilder>

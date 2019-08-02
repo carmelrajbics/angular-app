@@ -1,0 +1,18 @@
+<h1> Pipe Demo</h1>
+  <ul>  
+  <li>
+      {{userData.name|lowercase|uppercase}}
+  </li>
+  <li>
+      {{userData.income|currency:'INR':true}} 
+  </li>
+  <li>
+     {{userData.rating|number:'2.2-2'}}
+  </li>
+  <li>
+     {{userData.joiningDate|date}}
+  </li>
+  <li *ngIf="userData.description!=''" id=summary>
+    {{userData.description| summary:0:20}}
+  </li>
+  </ul>

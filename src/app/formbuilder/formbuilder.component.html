@@ -1,0 +1,47 @@
+<h1>Data Driven Form</h1>
+
+<form id='datadriven' [formGroup]='userForm' (ngSubmit)='onFormSubmit()'>
+  <h1>Template Driven Form</h1>
+  <table>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" formControlName="name" class="form-control" />
+
+          <div *ngIf="name.dirty && name.errors" class="error">
+            <div *ngIf="name.errors.required">
+              Title required.
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>E-mail</td>
+        <td> <input type="text" formControlName="email" class="form-control" /></td>
+        <div *ngIf="email.dirty && email.errors" class="error">
+          <div *ngIf="email.errors.required" id="validation">
+            Email required
+          </div>
+          <div *ngIf="email.errors.email" id="validation-email">
+              Invali email
+            </div>
+        </div>
+      </tr>
+      <tr>
+        <td>Income</td>
+        <td> <input type="text"  formControlName="income" class="form-control" /></td>
+      </tr>
+      <tr>
+        <td><Address>Address</Address></td>
+        <td>
+          <textarea rows="5" cols="60"  formControlName="address" class="form-control"></textarea>
+      </tr>
+      <tr>
+        <td><input type="submit" class="btn btn-success" [disabled]="userForm.invalid" /></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<br />
+{{users|json}}

@@ -1,0 +1,27 @@
+<p>
+  statemanagement works!
+</p>
+
+<div style="margin-left: 30%">
+  <form>
+    <table>
+      <tbody>
+        <tr>
+          <td>Coin Name</td>
+          <td><input type="text" name="coin_name" #name class="form-control"></td>
+        </tr>
+        <tr>
+          <td>Coin Price</td>
+          <td><input type="text" name="coin_price" #price class="form-control"></td>
+        </tr>
+        <tr>
+          <button type="submit" (click)='addCoin(name,price)' class="btn btn.success">Submit</button>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+<br/>
+<h1>
+  <app-displaystatemanagement></app-displaystatemanagement>
+</h1>

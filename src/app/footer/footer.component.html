@@ -1,0 +1,51 @@
+<p cc>
+  copyright @ Eurofins 2018
+</p>
+
+<ul>
+  <li *ngFor="let department of dept">
+    {{department}}
+  </li>
+</ul>
+
+<h1 cc>Template Driven Form</h1>
+<form id='templatedriven' (ngSubmit)="formSubmit(f)" #f=ngForm>
+  <table>
+    <tbody>
+      <tr>
+        <td>Name</td>
+        <td>
+          <input type="text" name="name" [(ngModel)]='userData.name' class="form-control" required minlength="3"
+            maxlength="10" #n=ngModel />
+          <div *ngIf="!n.valid" id="validation">
+            Minmun length should be 3
+          </div>
+          <!-- <div *ngIf="!n.valid.maxlength">
+            Max length should be 10
+            </div> -->
+        </td>
+      </tr>
+      <tr>
+        <td>E-mail</td>
+        <td> <input type="text" name="email" [(ngModel)]='userData.email' class="form-control" required email #em=ngModel /></td>
+        <div *ngIf="!em.valid" id="validation">
+          Invalid email
+        </div>
+      </tr>
+      <tr>
+        <td>Income</td>
+        <td> <input type="text" name="income" [(ngModel)]='userData.income' class="form-control" /></td>
+      </tr>
+      <tr>
+        <td><Address>Address</Address></td>
+        <td>
+          <textarea rows="5" cols="60" name="address" [(ngModel)]='userData.address' class="form-control"></textarea>
+      </tr>
+      <tr>
+        <td><input type="submit" class="btn btn-success" [disabled]="!f.valid" /></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<br />
+{{users|json}}
